@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+                      http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/context
+                      http://www.springframework.org/schema/beans/spring-context.xsd">
+  
+  <!-- Dependency Injection using setter injection -->
+  
+  <!-- 
+  		We can do Property injection using 3 ways :
+  	   	1. Simple Way
+  	   	2. Using p schema
+  	   	3. Using value as attribute
+   -->
+  
+  <bean class="com.spring_core.bean.Student" name="student1">
+  	<!-- Property injection in Simple Way -->
+  	<property name="studentId">
+  		<value>1</value>
+  	</property>
+  	<property name="studentName">
+  		<value>Rishabh Srivastava</value>
+  	</property>
+  	<property name="studentAddress">
+  		<value>Lucknow</value>
+  	</property>
+  </bean>
+                
+  <bean class="com.spring_core.bean.Student" name="student2">
+  	<!-- Property injection using p Schema -->
+  	<property name="studentId" value="2" />
+  	<property name="studentName" value="Mansi Soni" />
+  	<property name="studentAddress" value="Noida" />
+  </bean>
+  
+  <!-- Property injection using value as attribute -->
+  <bean class="com.spring_core.bean.Student" name="student3" p:studentId="3" p:studentName="Kapil" p:studentAddress="Delhi" /> 
+
+</beans>

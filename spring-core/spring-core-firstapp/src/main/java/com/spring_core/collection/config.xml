@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+                      http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/context
+                      http://www.springframework.org/schema/beans/spring-context.xsd">
+ 
+  <bean class="com.spring_core.collection.Employee" name="employee1">
+  	<property name="empName" value="Rishabh Srivastava"/>
+  	<property name="empPhones">
+  		<list>
+  			<value>7854525652</value>
+  			<value>9526542562</value>
+  			<value>9852245252</value>
+  			<null />
+  		</list>
+  	</property>
+  	<property name="empAddresses">
+  		<set>
+  			<value>Delhi</value>
+  			<value>Noida</value>
+  			<value>Lucknow</value>
+  		</set>
+  	</property>
+  	<property name="empCourses">
+  		<map>
+			<entry key="java" value="2 months" />
+			<entry key="python" value="3 months" />
+			<entry key="c++" value="1 months" />
+  		</map>
+  	</property>
+  	<property name="dbProperties">
+		<props>
+			<prop key="dbname">com.mysql.cj</prop>
+			<prop key="username">root</prop>
+			<prop key="password">root</prop>
+		</props>
+  	</property>
+  </bean>
+	 
+
+</beans>

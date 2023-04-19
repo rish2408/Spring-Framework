@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:c="http://www.springframework.org/schema/c"
+  xmlns:util="http://www.springframework.org/schema/util"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+   					  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   					  http://www.springframework.org/schema/context
+   					  http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                      http://www.springframework.org/schema/util
+                      http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+ 
+ 	<context:annotation-config/>
+ 	
+ 	<!-- standalone list -->
+ 	
+ 	<util:list list-class="java.util.LinkedList" id="friendslist">
+ 		<value>Akash</value>
+ 		<value>Bhavesh</value>
+ 		<value>Chahat</value>
+ 		<value>Dinesh</value>
+ 	</util:list>
+ 	
+ 	<util:map map-class="java.util.TreeMap" id="feestructure">
+		<entry key="Spring Framework" value="5000" />
+		<entry key="Core Java" value="3000" />
+		<entry key="Django Framework" value="2000" />
+		<entry key="Python Framework" value="8000" />
+ 	</util:map>
+ 	
+ 	<util:properties id="dbconfiguraion">
+ 		<prop key="driver">com.mysql.cj.jdbc.Driver</prop>
+ 		<prop key="username">root</prop>
+ 		<prop key="password">root</prop>
+ 	</util:properties>
+ 	
+ 	<bean class="com.spring_core.standalonecollection.Person" name="person1">
+ 		<property name="friends">
+ 			<ref bean="friendslist"/>
+ 		</property>
+ 		<property name="feeStructure" ref="feestructure" />
+ 		<property name="dbProperties" ref="dbconfiguraion" />
+ 	</bean>
+	 
+</beans>

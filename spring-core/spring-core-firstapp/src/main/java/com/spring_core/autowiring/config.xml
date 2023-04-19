@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:c="http://www.springframework.org/schema/c"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+   					  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   					  http://www.springframework.org/schema/context
+   					  http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+ 
+ 	<context:annotation-config/>
+	
+	<!-- <bean class="com.spring_core.autowiring.Employee" name="employee1" p:empId="1" p:empName="Rahul Gandhi" autowire="byName"/> -->
+	
+	<bean class="com.spring_core.autowiring.Employee" name="employee1" c:empId="1" c:empName="Rahul Gandhi" autowire="constructor"/>
+	
+	<bean class="com.spring_core.autowiring.Address" name="empAddress" p:street="Charbagh" p:city="Lucknow" />
+
+<!-- 	<bean class="com.spring_core.autowiring.Employee" name="employee2" p:empId="2" p:empName="Narendra Modi" autowire="byType"/>
+	
+	<bean class="com.spring_core.autowiring.Address" name="empAddress2" p:street="Jamnagar" p:city="Gujrat" /> -->
+	
+	<bean class="com.spring_core.autowiring.Student" name="student1" p:studentId="1" p:studentName="Akash Yadav" />
+	
+	<bean class="com.spring_core.autowiring.School" name="school1" p:schoolName="CMS" p:schoolCity="Lucknow" />
+	
+	<bean class="com.spring_core.autowiring.School" name="school2" p:schoolName="DPS" p:schoolCity="Delhi" />
+	 
+</beans>
